@@ -6,15 +6,16 @@ import {cadUsuario} from '../components/Api';
 
 class FormCadastro extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {};
 
         this.onSubmit = (e) => {
             cadUsuario(this.state)
             .then(res => {
               let {email, senha} = this.state;
-              this.props.onLogin({email,senha});
+              let dados = {email,senha};
+              this.props.onLogin(dados);
             })
             .catch(err => {
               let erros = []

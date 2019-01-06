@@ -43,7 +43,7 @@ class LoginPage extends Component {
     // const BloquearNavegacao = Boolean(email||senha);
 
     if (cadastro) {
-      return (<CadastroPage onLogin={this.props.onLogin} cancela={this.cancela} />)
+      return (<CadastroPage onLogin={this.onLogin} cancela={this.cancela} />)
     } else {
       return (<FormLogin cadastro={this.cadastro} onLogin={this.onLogin} erros={this.state.erros} />)
     }
