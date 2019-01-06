@@ -1,5 +1,4 @@
 import React from 'react';
-import { isAutenticado, setAutenticado } from '../utils/LoginManager';
 import { Nav, NavItem} from 'reactstrap';
 import {
   Link,

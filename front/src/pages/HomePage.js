@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import {login} from '../components/Api';
 // pages
 import UsuarioPage from './UsuarioPage';
-import LoginPage from './LoginPage';
-import { isAutenticado, setAutenticado } from '../utils/LoginManager';
+import { isAutenticado } from '../utils/LoginManager';
 
 class HomePage extends Component {
 

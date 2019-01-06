@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CadastroPage from '../components/FormCadastro';
 import FormLogin from '../components/FormLogin';
 import {login} from '../components/Api';
-import { isAutenticado, setAutenticado } from '../utils/LoginManager';
+import {setAutenticado } from '../utils/LoginManager';
 
 class LoginPage extends Component {
 
