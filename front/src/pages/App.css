@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -28,8 +34,13 @@ header {
   padding-bottom: 25px;
 }
 
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
 .container{
   max-width: 900px;
+  min-height: 600px;
   background:rgba(255,255,255,0.9);
   padding: 50px;
   margin: 50px auto;
@@ -40,7 +51,6 @@ header {
 .login-page {
   max-width: 400px;
   margin: 0 auto;
-  color:#999;
 }
 
 .login-page input {

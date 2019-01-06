@@ -32,6 +32,7 @@ class FormCadastro extends Component {
         const {erros} = this.state;
         return (
             <div>
+                <h1>Novo Cadastro</h1>
            <InputGroup>
             <label><FaUserAlt /></label>
             <Input placeholder="nome" name="nome" type="text" onChange={this.onChange} required />

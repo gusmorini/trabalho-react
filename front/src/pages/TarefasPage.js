@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Input, Table, Alert} from 'reactstrap';
-import ListaViewItem from './listaViewItem';
+import ListaViewItem from '../components/listaViewItem';
 import {desconcluiTarefa, concluiTarefa, editaTarefa, delTarefa, buscaTarefas} from '../components/Api';
 
 import TaskForm from '../components/TaskForm';
 
 
-class listaView extends Component {
+class TarefasPage extends Component {
 
     constructor() {
 
@@ -121,4 +121,4 @@ class listaView extends Component {
 
 }
 
-export default listaView;
+export default TarefasPage;

@@ -7,41 +7,20 @@ import {
 } from 'react-router-dom';
 
 const Menu = (props) => {
-
-    const aut = isAutenticado();
-
     return (
         <div>
-
         <Nav>
             <NavItem>
-            <Link className="nav-link" to="/"> Home </Link>
+                <Link className="nav-link" to="/"> Usuário </Link>
             </NavItem>
 
-            { aut && (
-                <NavItem>
+            <NavItem>
                 <Link className="nav-link" to="/tarefas"> Tarefas </Link>
-                </NavItem>
-            ) }
+            </NavItem>
 
-            {
-                aut && (
-                    <NavItem>
-                    <a  href="/" 
-                        className="nav-link" 
-                        onClick={
-                            ()=> {
-                                setAutenticado(false);
-                                props.history.push('/');
-                            }
-                        }>
-                        Sair
-                    </a>
-                    </NavItem>
-                    
-                )
-            }
-
+            <NavItem>
+                <Link className='nav-link' to='/' onClick={()=>{props.LoginLogout()}}>Sair</Link>
+            </NavItem>
         </Nav>
         </div>
     );

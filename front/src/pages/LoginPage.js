@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CadastroPage from '../components/FormCadastro';
 import FormLogin from '../components/FormLogin';
+import {login} from '../components/Api';
+import { isAutenticado, setAutenticado } from '../utils/LoginManager';
 
 class LoginPage extends Component {
 
@@ -16,6 +18,23 @@ class LoginPage extends Component {
       this.setState({cadastro:false});
     }
 
+    this.onLogin = (dados) => {
+      login(dados)
+      .then(res => {
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('id',res.data.usuario.id);
+        setAutenticado(true);
+        this.setState({aut:true});
+        this.setState({erros:null});
+        props.LoginLogout();
+      })
+      .catch(err => {
+        this.setState({erros:err.response.data});
+          // if (err.response.data.length>0){
+          // }
+      });
+    }
+
 
   } //constructor
 
@@ -26,7 +45,7 @@ class LoginPage extends Component {
     if (cadastro) {
       return (<CadastroPage onLogin={this.props.onLogin} cancela={this.cancela} />)
     } else {
-      return (<FormLogin cadastro={this.cadastro} onLogin={this.props.onLogin} erros={this.props.erros} />)
+      return (<FormLogin cadastro={this.cadastro} onLogin={this.onLogin} erros={this.state.erros} />)
     }
 
   }

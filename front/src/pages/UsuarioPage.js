@@ -66,6 +66,8 @@ class UsuarioPage extends Component {
     return (
       <div>
 
+        <h1>Dados do Usuário</h1>
+
         <InputGroup>
         <label><FaUserAlt /></label>
           <Input type="text" id="nome" name="nome" value={usuario.nome} onChange={this.onChange} />

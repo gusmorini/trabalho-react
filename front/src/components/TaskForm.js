@@ -51,7 +51,7 @@ class TaskForm extends Component {
         <Button color="primary" onClick={this.toggle}>Nova Tarefa</Button>
         <form onSubmit={this.onSubmit}>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Nova Tarefa</ModalHeader>
+          <ModalHeader toggle={this.toggle}><h1>Nova Tarefa</h1></ModalHeader>
           <ModalBody>
             <div>
                 <Input type="text" name="titulo" placeholder="título" onChange={this.onChange}  />
