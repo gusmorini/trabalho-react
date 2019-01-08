@@ -153,7 +153,7 @@ function desmarcarConcluida(request, response, next) {
             response.status(404).send('tarefa não encontrada')
         }else{
             return tarefa.update({
-                concluida:null
+                concluida:0
             })
             .then(()=>{
                 response.status(200).json(tarefa)

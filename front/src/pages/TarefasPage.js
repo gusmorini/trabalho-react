@@ -89,7 +89,6 @@ class TarefasPage extends Component {
                     <th width='10'>Nº</th>
                     <th>Título</th>
                     <th>Descrição</th>
-                    <th width='50'>Concluida</th>
                     <th width='150'>...</th>
                 </tr>
                 {

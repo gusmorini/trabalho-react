@@ -39,24 +39,25 @@ class listaViewItem extends Component {
         }
 
         this.alterarEstado = () =>{
+            if (this.state.status === 1 ){
+                this.setState({status:0});
+            } else {
+                this.setState({status:1});
+            }
             this.props.alterarEstado(this.props.tarefa.id, this.props.tarefa.concluida);
         }
 
-
-
     } // constructor
-
+    
     render(){
+
 
         if (!this.state.edit){
             return (
                 <tr>
-                    <td>{this.props.index+1}</td>
-                    <td>{this.props.tarefa.titulo}</td>
-                    <td>{this.props.tarefa.descricao}</td>
-                    <td>
-                        { this.props.tarefa.concluida === 1 ? <span className='text-success'>SIM</span> : <span className='text-warning'>NÃO</span> } &nbsp;
-                    </td>
+                    <td className={`cor-${this.state.status}`}>{this.props.index+1}</td>
+                    <td className={`cor-${this.state.status}`}>{this.props.tarefa.titulo}</td>
+                    <td className={`cor-${this.state.status}`}>{this.props.tarefa.descricao}</td>
                     <td className='btn-table'>
                         <Button outline size='sm' color='primary' title='alterar estado' onClick={this.alterarEstado}><FaRedo /></Button>
                         <Button outline size='sm' color='warning' title='editar' onClick={this.abrirForm}><FaPencilAlt /></Button>
@@ -67,12 +68,9 @@ class listaViewItem extends Component {
         }
         return (
             <tr>
-                <td>{this.props.index+1}</td>
+                <td className={`cor-${this.state.status}`}>{this.props.index+1}</td>
                 <td><input class='input-table' name="titulo" value={this.state.titulo} onChange={this.onChange} /></td>
                 <td><input class='input-table' name="descricao" value={this.state.descricao} onChange={this.onChange} /></td>
-                <td>
-                { this.props.tarefa.concluida === 1 ? <span className='text-success'>SIM</span> : <span className='text-warning'>NÃO</span> } &nbsp;
-                </td>
                 <td>
                     {/* <a href="#" title='salvar' className='text-success' onClick={this.editarTarefa}>  </a> &nbsp;
                     <a href="#" title='cancelar' onClick={this.fecharForm}>  </a> */}

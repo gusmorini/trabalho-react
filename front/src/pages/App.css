@@ -24,9 +24,9 @@
 }
 
 body {
-  background: url('../img/background.jpg') no-repeat;
+  background: url('../img/background.jpg') no-repeat fixed;
   background-color:#4eada7;
-  background-position: top;
+  background-position: center;
 }
 
 header {
@@ -105,4 +105,13 @@ label {
   width:100%;
   margin-bottom: 25px;
   padding: 5px;
+}
+
+.cor-0 {
+  color:#ff3300;
+}
+
+.cor-1 {
+  color: #999;
+  text-decoration-line: line-through;
 }
